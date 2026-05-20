@@ -19,16 +19,18 @@ export default function Projects() {
       demo: '#', // Placeholder for now, can be updated later
     },
     {
-      title: 'Sistema de Autenticación & API Gateway Seguro',
-      description: 'Una arquitectura robusta de backend que implementa autenticación basada en tokens JWT, cifrado de contraseñas, renovación de sesiones y middleware de control de accesos basados en roles (RBAC).',
+      title: 'API REST de Gestión de Tareas',
+      description: 'API RESTful para gestión de usuarios y sus tareas, desarrollada en TypeScript con Express y Prisma sobre MySQL. Incluye autenticación, validaciones, controladores tipados y preparación para despliegue (Heroku / CI).',
       featured: false,
-      tags: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Mongoose'],
+      tags: ['TypeScript', 'Node.js', 'Express', 'Prisma', 'MySQL', 'JWT'],
       features: [
-        'Registro y Login seguro de usuarios.',
-        'Validación estricta de esquemas de datos.',
-        'Manejo centralizado de errores y protección contra ataques CSRF/XSS.'
+        'Endpoints CRUD para usuarios y tareas con validaciones y gestión de errores.',
+        'Autenticación y autorización basada en JWT para rutas protegidas.',
+        'Prisma ORM para modelado, migraciones y consultas tipadas.',
+        'Estructura modular (controllers, services, routes) y middlewares reutilizables.',
+        'Configuración y scripts para despliegue en Heroku y workflows de CI en GitHub Actions.'
       ],
-      github: 'https://github.com/gmartinezarpe',
+      github: 'https://github.com/gmartinezarpe/api-user-task',
       demo: '#',
     },
     {
