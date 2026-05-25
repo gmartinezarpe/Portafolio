@@ -69,7 +69,7 @@ export default function Contact() {
             {/* Social card buttons */}
             <div className="grid grid-cols-2 gap-4">
               <a
-                href="https://www.linkedin.com/in/gmartinezarpe"
+                href="https://www.linkedin.com/in/gerardo-martinez-arpe/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-light p-4 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-slate-400 hover:text-white hover:border-indigo-500/30 hover:bg-slate-900/40 transition-all duration-300"
