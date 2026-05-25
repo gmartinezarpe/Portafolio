@@ -58,7 +58,7 @@ export default function Hero() {
             <GithubIcon className="h-5 w-5" />
           </a>
           <a
-            href="https://www.linkedin.com/in/gmartinezarpe"
+            href="https://www.linkedin.com/in/gerardo-martinez-arpe/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white p-2 rounded-lg bg-slate-900 border border-slate-850 hover:border-slate-700 transition-all duration-200"

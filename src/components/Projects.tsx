@@ -34,17 +34,18 @@ export default function Projects() {
       demo: '#',
     },
     {
-      title: 'Portafolio Web Profesional Interactivo',
-      description: 'Este mismo sitio web. Diseñado para ofrecer una experiencia estética e interactiva de alto nivel que demuestre mis habilidades front-end, optimizado para carga rápida y despliegue continuo.',
+      title: 'Pokedex — Cliente de PokeAPI',
+      description: 'Proyecto React + Vite que consume la PokeAPI para mostrar una lista de Pokémon, búsqueda por nombre/ID y vista de detalles con sprite.',
       featured: false,
-      tags: ['React', 'Vite', 'Tailwind CSS', 'TypeScript', 'GitHub Pages'],
+      tags: ['React', 'Vite', 'PokeAPI', 'JavaScript', 'CSS'],
       features: [
-        'Totalmente responsivo y adaptado para dispositivos móviles.',
-        'Estética moderna en modo oscuro ("glassmorphism").',
-        'Despliegue automatizado continuo a través de GitHub Pages.'
+        'Listado paginado de Pokémon usando la PokeAPI.',
+        'Búsqueda por nombre o ID con filtrado dinámico.',
+        'Vista de detalles y sprite del Pokémon seleccionado en modal.',
+        'Interfaz responsiva y rendimiento optimizado con Vite.'
       ],
-      github: 'https://github.com/gmartinezarpe/Portafolio',
-      demo: 'https://gmartinezarpe.github.io/Portafolio/',
+      github: 'https://github.com/gmartinezarpe/Pokedex',
+      demo: '#',
     }
   ];
 
