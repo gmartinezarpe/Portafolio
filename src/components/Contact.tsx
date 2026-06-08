@@ -1,21 +1,39 @@
 import { useState } from 'react';
 import { Mail, Send, CheckCircle2, MapPin } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons';
+import emailjs from '@emailjs/browser';
+import { useEffect } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+ useEffect(() => {
+  emailjs.init('pjDs4DGemsMrCtmC9');
+}, []);
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (!formData.name || !formData.email || !formData.message) return;
+  
+  try {
+    await emailjs.send('service_59s5ceu', 'template_r5voj9p', {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+      to_email: 'gema.arpe@gmail.com', 
+    });
     
-    // Simulate form submission
     setSubmitted(true);
     setTimeout(() => {
       setFormData({ name: '', email: '', message: '' });
+      setSubmitted(false);
     }, 2000);
-  };
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Error al enviar. Intenta de nuevo.');
+  }
+};
 
   return (
     <section id="contacto" className="py-24 bg-slate-950 relative">
@@ -47,8 +65,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Correo Electrónico</div>
-                  <a href="mailto:gmartinezarpe@gmail.com" className="text-white hover:text-indigo-400 font-semibold text-sm transition-colors">
-                    gmartinezarpe@gmail.com
+                  <a href="mailto:gema.arpe@gmail.com" className="text-white hover:text-indigo-400 font-semibold text-sm transition-colors">
+                    gema.arpe@gmail.com
                   </a>
                 </div>
               </div>

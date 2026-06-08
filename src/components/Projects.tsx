@@ -1,19 +1,20 @@
-import { ExternalLink, Calendar, Mail, QrCode, Sparkles, CheckCircle } from 'lucide-react';
+import { ExternalLink, Calendar, Mail, QrCode, Sparkles, CheckCircle, ShieldCheck, KeyRound, LogIn } from 'lucide-react';
 import { GithubIcon } from './icons';
 
 export default function Projects() {
   const projects = [
     {
       title: 'Aplicación de Reserva de Citas Fullstack',
-      description: 'Plataforma web profesional para la gestión y reserva de citas médicas/empresariales. Cuenta con un panel de control interactivo para administradores, creación, edición y eliminación de citas, y validaciones de horarios.',
+      description: 'Plataforma web profesional para la gestión y reserva de citas médicas/empresariales. Incluye autenticación segura con JWT, panel de administración con acceso protegido por roles, creación, edición y eliminación de citas, y validaciones de horarios.',
       featured: true,
-      tags: ['React', 'Node.js', 'MongoDB', 'Ant Design', 'TypeScript', 'Express'],
+      tags: ['React', 'Node.js', 'MongoDB', 'Ant Design', 'TypeScript', 'Express', 'JWT', 'Bcrypt'],
       features: [
-        'Sincronización en tiempo real con Google Calendar API.',
+        'Sistema de autenticación completo: registro, login y protección de rutas con JWT.',
+        'Tokens firmados con secreto y expiración configurable; renovación automática via middleware.',
+        'Contraseñas hasheadas con Bcrypt; acceso al dashboard solo para administradores autorizados.',
         'Notificaciones de confirmación por email automáticas usando Nodemailer SMTP.',
         'Generación automática de códigos QR dinámicos para control presencial.',
-        'Edición completa de citas con actualización instantánea en base de datos y Google Calendar.',
-        'Dashboard interactivo con resúmenes estadísticos.'
+        'Dashboard interactivo con resúmenes estadísticos y gestión completa de citas.',
       ],
       github: 'https://github.com/gmartinezarpe/Reserva-citas-fullstack',
       demo: '#', // Placeholder for now, can be updated later
@@ -116,11 +117,11 @@ export default function Projects() {
               {/* Showcase / Visual side */}
               <div className="lg:col-span-5 flex flex-col justify-center items-center bg-slate-900/50 rounded-2xl border border-slate-800/80 p-6 sm:p-8 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/5 to-purple-500/5 z-0"></div>
-                <div className="relative z-10 w-full text-center space-y-6">
+                <div className="relative z-10 w-full text-center space-y-4">
                   <div className="text-indigo-400 font-bold text-xs uppercase tracking-widest">Arquitectura del Sistema</div>
-                  
+
                   {/* Visual blocks */}
-                  <div className="flex flex-col gap-3 max-w-[280px] mx-auto text-xs font-semibold text-slate-300">
+                  <div className="flex flex-col gap-2.5 max-w-[300px] mx-auto text-xs font-semibold text-slate-300">
                     <div className="flex items-center justify-between p-3 bg-slate-950 border border-slate-800 rounded-xl">
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4 text-indigo-400" />
@@ -128,7 +129,7 @@ export default function Projects() {
                       </div>
                       <span className="text-[10px] text-green-500 uppercase bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">React</span>
                     </div>
-                    
+
                     <div className="flex items-center justify-between p-3 bg-slate-950 border border-slate-800 rounded-xl">
                       <div className="flex items-center gap-2">
                         <Mail className="h-4 w-4 text-purple-400" />
@@ -144,10 +145,41 @@ export default function Projects() {
                       </div>
                       <span className="text-[10px] text-green-500 uppercase bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">MERN</span>
                     </div>
+
+                    {/* Auth section divider */}
+                    <div className="flex items-center gap-2 my-0.5">
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent"></div>
+                      <span className="text-[10px] text-yellow-500/70 font-bold tracking-widest uppercase">Seguridad</span>
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent"></div>
+                    </div>
+
+                    <div className="flex items-center justify-between p-3 bg-slate-950 border border-yellow-500/25 rounded-xl shadow-[0_0_12px_rgba(234,179,8,0.06)]">
+                      <div className="flex items-center gap-2">
+                        <LogIn className="h-4 w-4 text-yellow-400" />
+                        <span>Auth / Login</span>
+                      </div>
+                      <span className="text-[10px] text-yellow-500 uppercase bg-yellow-500/10 px-2 py-0.5 rounded-full border border-yellow-500/30">Nuevo</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-3 bg-slate-950 border border-orange-500/25 rounded-xl shadow-[0_0_12px_rgba(249,115,22,0.06)]">
+                      <div className="flex items-center gap-2">
+                        <KeyRound className="h-4 w-4 text-orange-400" />
+                        <span>JWT + Bcrypt</span>
+                      </div>
+                      <span className="text-[10px] text-orange-400 uppercase bg-orange-500/10 px-2 py-0.5 rounded-full border border-orange-500/30">Nuevo</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-3 bg-slate-950 border border-emerald-500/25 rounded-xl shadow-[0_0_12px_rgba(16,185,129,0.06)]">
+                      <div className="flex items-center gap-2">
+                        <ShieldCheck className="h-4 w-4 text-emerald-400" />
+                        <span>Rutas Protegidas</span>
+                      </div>
+                      <span className="text-[10px] text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">Nuevo</span>
+                    </div>
                   </div>
 
                   <p className="text-xs text-slate-500 leading-normal px-2">
-                    Estructura desacoplada con API RESTful, enrutamiento seguro de Express y base de datos persistente en MongoDB Atlas.
+                    API RESTful con autenticación JWT, contraseñas hasheadas con Bcrypt, rutas protegidas por middleware y base de datos en MongoDB Atlas.
                   </p>
                 </div>
               </div>

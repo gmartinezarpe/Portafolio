@@ -45,7 +45,7 @@ export default function Hero() {
             Contáctame
           </a>
           <a
-            href={`${import.meta.env.BASE_URL}CV-Gerardo-Martinez.pdf`}
+            href={`${import.meta.env.BASE_URL}Curriculum_Gerardo_Martínez.pdf`}
             download
             className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/20 transition-all duration-200"
           >

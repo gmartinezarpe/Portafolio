@@ -34,6 +34,7 @@ export default function Skills() {
         { name: 'MongoDB', level: 'Intermedio-Avanzado' },
         { name: 'Mongoose (ODM)', level: 'Intermedio-Avanzado' },
         { name: 'MongoDB Atlas', level: 'Intermedio' },
+        { name: 'MySQL', level: 'Intermedio' },
       ],
     },
     {
@@ -43,7 +44,6 @@ export default function Skills() {
         { name: 'Git & GitHub', level: 'Avanzado' },
         { name: 'npm / pnpm', level: 'Avanzado' },
         { name: 'Postman', level: 'Avanzado' },
-        { name: 'Vercel / Netlify / Pages', level: 'Intermedio-Avanzado' },
         { name: 'VS Code', level: 'Avanzado' },
       ],
     },
